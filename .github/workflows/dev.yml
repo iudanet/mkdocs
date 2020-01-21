@@ -11,6 +11,8 @@ on:
 
 jobs:
   cd:
+    env:
+      DOCKER_TMP_NAME: mkdocs
     runs-on: ubuntu-latest
     # needs: ci
     steps:
@@ -18,11 +20,11 @@ jobs:
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
-        run: docker build -t mkdocs .
+        run: docker build -t $DOCKER_TMP_NAME .
       - name: Tags
         run: |
-          docker tag ansible-lint ${{ github.repository }}:${{ github.sha }}
-          docker tag ansible-lint ${{ github.repository }}:dev
+          docker tag $DOCKER_TMP_NAME ${{ github.repository }}:${{ github.sha }}
+          docker tag $DOCKER_TMP_NAME ${{ github.repository }}:dev
       - name: check install
         run: |
           docker images
