@@ -1,0 +1,35 @@
+name: Dev CI/CD
+on:
+  push:
+    branches:
+      - dev
+      - actions
+  pull_request:
+    branches:
+      - dev
+      - actions
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    # needs: ci
+    steps:
+      - uses: actions/checkout@v1
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build
+        run: docker build -t mkdocs .
+      - name: Tags
+        run: |
+          docker tag ansible-lint ${{ github.repository }}:${{ github.sha }}
+          docker tag ansible-lint ${{ github.repository }}:dev
+      - name: check install
+        run: |
+          docker images
+          docker run --rm ${{ github.repository }}:${{ github.sha }} mkdocs -V
+          docker run --rm ${{ github.repository }}:${{ github.sha }} ssh -V
+          docker run --rm ${{ github.repository }}:${{ github.sha }} bash --version
+      - name: Push
+        run: |
+          docker push ${{ github.repository }}:${{ github.sha }}
+          docker push ${{ github.repository }}:dev
