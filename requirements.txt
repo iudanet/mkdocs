@@ -3,10 +3,10 @@ htmlmin==0.1.12
 Jinja2==2.11.2
 jsmin==2.2.2
 livereload==2.6.1
-Markdown==3.2.1
+Markdown==3.2.2
 MarkupSafe==1.1.1
-mkdocs==1.1
-mkdocs-material==5.1.5
+mkdocs==1.1.1
+mkdocs-material==5.1.6
 mkdocs-minify-plugin==0.3.0
 pep562==1.0
 Pygments==2.6.1
