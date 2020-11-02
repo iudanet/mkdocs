@@ -13,4 +13,4 @@ Pygments==2.7.2
 PyYAML==5.3.1
 pymdown-extensions==8.0.1
 six==1.15.0
-tornado==6.0.4
+tornado==6.1
