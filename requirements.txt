@@ -1,6 +1,6 @@
 Click==8.0.0
 htmlmin==0.1.12
-Jinja2==2.11.3
+Jinja2==3.0.0
 jsmin==2.2.2
 livereload==2.6.3
 Markdown==3.3.4
