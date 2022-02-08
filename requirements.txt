@@ -8,6 +8,7 @@ MarkupSafe==2.0.1
 mkdocs-material==7.2.4
 mkdocs==1.2.3
 mkdocs-minify-plugin==0.5.0
+mkdocs-material==8.1.10
 pep562==1.1
 Pygments==2.10.0
 Pygments==2.11.2
