@@ -19,7 +19,8 @@ RUN python3 -m venv  $VIRTUAL_ENV
 
 COPY requirements.txt /requirements.txt
 RUN  pip install --no-cache-dir --upgrade pip==${PIP_VERSION} \
-        && pip install --no-cache-dir -r /requirements.txt
+    && pip install --no-cache-dir wheel \
+    && pip install --no-cache-dir -r /requirements.txt
 FROM base
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
