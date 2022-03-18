@@ -1,4 +1,4 @@
-FROM python:3.10.2-alpine3.15 AS base
+FROM python:3.10.3-alpine3.15 AS base
 RUN apk add --no-cache --update openssh-client bash git
 FROM base AS builder
 LABEL maintainer="Chudakov Aleksandr chudo@iudanet.com"
