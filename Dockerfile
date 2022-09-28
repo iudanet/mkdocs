@@ -12,7 +12,7 @@ RUN apk add --no-cache --update \
     openssl-dev
 
 ENV VIRTUAL_ENV=/opt/venv
-ENV PIP_VERSION=22.0.3
+ENV PIP_VERSION=22.2.2
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN python3 -m venv  $VIRTUAL_ENV
 
