@@ -7,7 +7,7 @@ Markdown==3.3.7
 MarkupSafe==2.1.1
 mkdocs==1.4.2
 mkdocs-minify-plugin==0.6.2
-mkdocs-material==9.0.3
+mkdocs-material==9.1.0
 pep562==1.1
 Pygments==2.14.0
 six==1.16.0
